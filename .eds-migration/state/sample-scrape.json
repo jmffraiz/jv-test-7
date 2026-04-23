@@ -1,0 +1,668 @@
+{
+  "scrapedAt": "2026-04-23T19:45:00.000Z",
+  "site": "https://www.juvederm.nl",
+  "sourceMethod": "bundle-analysis",
+  "settleStrategy": "networkidle + body.textLength stable 500ms x2, overlays dismissed (from crawler)",
+  "siteFramework": "Adobe Experience Manager (AEM) with AbbVie Aesthetics component library (aaaem-*)",
+  "archetypes": {
+    "homepage": {
+      "url": "https://www.juvederm.nl/",
+      "slug": "homepage",
+      "title": "JUVÉDERM Nederlands",
+      "source": "bundle",
+      "pageLayout": {
+        "structure": "header-fragment → content-container → footer-fragment",
+        "bodyClasses": ["page", "basicpage"],
+        "rootPath": "body > div > .root.container.responsivegrid > .cmp-container > .aem-Grid",
+        "totalElements": 1158
+      },
+      "sections": [
+        {
+          "name": "hero-teaser",
+          "type": "TEASER",
+          "description": "Full-width hero with background image, looping video, and H1 heading overlay",
+          "classes": ["emu-teaser", "aaaem-teaser", "cmp-teaser", "hero-teaser", "juvederm-teaser", "has-media", "has-full-bleed-image", "has-video", "scroll-effect-none"],
+          "content": {
+            "heading": "Jouw unieke schoonheid",
+            "headingLevel": "h1",
+            "hasImage": true,
+            "imageSrc": "/adobe/dynamicmedia/deliver/dm-aid--1837f3c6-df22-47f8-aa8e-d5d380f2e340/2024-key-visual-sofie-01803",
+            "hasVideo": true,
+            "videoSrc": "/content/dam/juvederm-ous/nl/Juvederm_Hellana_PP001_G02_ProRes_2K.mp4",
+            "hasActions": false
+          },
+          "edsMapping": "hero block with video background"
+        },
+        {
+          "name": "intro-text-with-image",
+          "type": "SECTION-CONTAINER",
+          "description": "Two-column section with intro text paragraph on left and image on right. Style class: scroll-reveal-before-sibling",
+          "content": {
+            "text": "JUVÉDERM® is wereldwijd het meest toonaangevende merk in fillers*1. Of je nu een subtiel resultaat wil of een zichtbare verandering...",
+            "hasImage": true,
+            "imageType": "lazy-loaded (base64 placeholder)"
+          },
+          "edsMapping": "default content (text + image columns)"
+        },
+        {
+          "name": "benefit-cards",
+          "type": "CARD (x4)",
+          "description": "Four benefit/value-proposition cards arranged horizontally, each with a title and body text. No images or links. Container has style class 'card'.",
+          "cards": [
+            {
+              "title": "Een natuurlijke uitstraling én gevoel†12,13",
+              "body": "JUVÉDERM® wordt gemaakt op basis van hyaluronzuur2-9..."
+            },
+            {
+              "title": "Toonaangevend",
+              "body": "JUVÉDERM® is wereldwijd het meest toonaangevende merk..."
+            },
+            {
+              "title": "Langdurige resultaten*4",
+              "body": "Het resultaat blijft 9 tot 24 maanden zichtbaar..."
+            },
+            {
+              "title": "Hoge patiënt tevredenheid‡17",
+              "body": "Ruim 91% was tevreden met hun uitstraling..."
+            }
+          ],
+          "edsMapping": "cards block (text-only variant)"
+        },
+        {
+          "name": "footnotes-small-text",
+          "type": "TEXT",
+          "description": "Disclaimer/footnote text in small print",
+          "edsMapping": "default content (paragraph with small/fine-print styling)"
+        },
+        {
+          "name": "before-after-carousel",
+          "type": "CAROUSEL",
+          "description": "Before/after photo comparison carousel. Each item contains 'Voor'/'Na' text labels paired with images. Has indicators (dots). 10 items total (duplicated for mobile/desktop).",
+          "content": {
+            "itemCount": 10,
+            "hasIndicators": true,
+            "hasArrows": false,
+            "itemPattern": "TEXT('Voor') + IMAGE + TEXT('Na') + IMAGE",
+            "containerStyle": "carouselslide"
+          },
+          "edsMapping": "carousel block with before-after content"
+        },
+        {
+          "name": "treatment-zone-picker",
+          "type": "CONTAINER (interactive)",
+          "description": "Interactive face image with treatment zone text panels. Shows a portrait image with toggleable text descriptions for different facial zones (contouren, ogen, volume, lippen). Uses dynamic media images and visibility toggling via style classes.",
+          "content": {
+            "zones": [
+              {"label": "Versterk contouren", "description": "Jouw natuurlijke gezichtskenmerken zijn de sleutel tot een jeugdige uitstraling..."},
+              {"label": "Stralende oogopslag", "description": "De natuurlijke hydratatie en elasticiteit van je huid neemt af..."},
+              {"label": "Herstel volume", "description": "Naarmate je ouder wordt, verliest je huid geleidelijk wat volume..."},
+              {"label": "Vollere lippen", "description": "Mooie lippen zijn er in allerlei soorten en maten..."}
+            ],
+            "images": [
+              "/adobe/dynamicmedia/deliver/dm-aid--32a21521-b4a2-44d3-aaed-2f5c707b83bd/2024-incidental-lily-00439-",
+              "/adobe/dynamicmedia/deliver/dm-aid--29c13e32-5ae5-4711-b56e-aa51e6f2be38/2024-key-visual-stefan-0260"
+            ],
+            "hasVisibilityToggle": true
+          },
+          "edsMapping": "tabs block or custom treatment-zones block"
+        },
+        {
+          "name": "find-clinic-video",
+          "type": "CONTAINER",
+          "description": "Empty container with style class 'c-find-the-clinic-video'. Likely holds a video embed or CTA for clinic finder, rendered client-side.",
+          "styleClass": "c-find-the-clinic-video",
+          "edsMapping": "embed block or CTA section"
+        },
+        {
+          "name": "references",
+          "type": "TEXT",
+          "description": "Reference notes/footnotes for medical claims and citations",
+          "edsMapping": "default content (small text)"
+        }
+      ],
+      "ctas": [
+        {"text": "Meer informatie", "variant": "aaaem-button__secondary-filled", "count": 6},
+        {"text": "Vind je kliniek", "variant": "aaaem-button__primary-outline", "count": 2}
+      ],
+      "images": {
+        "total": 19,
+        "dynamicMedia": 4,
+        "lazyLoaded": 15
+      }
+    },
+
+    "treatment": {
+      "url": "https://www.juvederm.nl/nl/treatment/lips",
+      "slug": "nl-treatment-lips",
+      "title": "Juvederm en lippen | Juvéderm® Netherlands",
+      "source": "bundle",
+      "pageLayout": {
+        "structure": "header-fragment → content-container → footer-fragment",
+        "bodyClasses": ["page", "basicpage"],
+        "totalElements": 1163
+      },
+      "sections": [
+        {
+          "name": "hero-teaser",
+          "type": "TEASER",
+          "description": "Full-width hero with background image (no video on treatment pages) and H1 heading",
+          "classes": ["emu-teaser", "aaaem-teaser", "cmp-teaser", "hero-teaser", "has-media", "has-full-bleed-image", "scroll-effect-none"],
+          "content": {
+            "heading": "Aantrekkelijke lippen",
+            "headingLevel": "h1",
+            "hasImage": true,
+            "imageSrc": "/adobe/dynamicmedia/deliver/dm-aid--c609ee82-ee50-4227-8a24-74e317f72757/2024-incidental-sofie-02353-rgb-lr-lips.jpg",
+            "hasVideo": false,
+            "hasActions": false
+          },
+          "edsMapping": "hero block (image-only variant)"
+        },
+        {
+          "name": "intro-text-with-image",
+          "type": "SECTION-CONTAINER",
+          "description": "Two-column section: intro paragraph about the treatment on left, image on right",
+          "content": {
+            "text": "Lippen zijn er in allerlei soorten en maten. Van extra vol tot subtiel gevormd...",
+            "hasImage": true
+          },
+          "edsMapping": "default content (columns)"
+        },
+        {
+          "name": "benefit-carousel",
+          "type": "CAROUSEL",
+          "description": "Carousel with text-only benefit slides explaining treatment advantages. 6 items (3 unique, duplicated for mobile/desktop). Each slide has paragraph text content.",
+          "content": {
+            "itemCount": 6,
+            "itemPattern": "TEXT paragraph per slide",
+            "containerStyle": "carouselslide",
+            "slides": [
+              "JUVÉDERM maakt gebruik van hyaluronzuur...",
+              "De resultaten van de lipbehandeling houden tot 12 maanden lang aan...",
+              "Bij de behandeling wordt rekening gehouden met jouw persoonlijke wensen..."
+            ]
+          },
+          "edsMapping": "carousel block (text-only)"
+        },
+        {
+          "name": "before-after-images",
+          "type": "SECTION-CONTAINER",
+          "description": "Before/after photo pair with 'Voor' and 'Na' labels",
+          "content": {
+            "pattern": "TEXT('Voor') + IMAGE + TEXT('Na') + IMAGE"
+          },
+          "edsMapping": "columns block with before/after images"
+        },
+        {
+          "name": "product-cards-carousel",
+          "type": "CAROUSEL with CARDS",
+          "description": "Carousel of product cards, each with a background image, title and description. 10 items (5 unique products, duplicated). Cards show specific JUVÉDERM products.",
+          "content": {
+            "itemCount": 10,
+            "containerStyle": "card",
+            "cards": [
+              {"title": "JUVÉDERM® VOLBELLA met lidocaïne", "hasImage": true, "body": "wordt gebruikt om fijne lijntjes en het traangebied te behandelen..."},
+              {"title": "JUVÉDERM® VOLIFT met lidocaïne", "hasImage": true, "body": "wordt gebruikt om diepe rimpels en lijntjes op te vullen..."},
+              {"title": "JUVÉDERM® ULTRA 4", "hasImage": true, "body": "wordt gebruikt om lijnen en rimpels te behandelen..."},
+              {"title": "JUVÉDERM® ULTRA 3", "hasImage": true, "body": "wordt gebruikt om middelmatige of diepe lijnen en rimpels te behandelen..."},
+              {"title": "JUVÉDERM® ULTRA 2", "hasImage": true, "body": "wordt gebruikt om middelmatige lijnen en rimpels te behandelen..."}
+            ]
+          },
+          "edsMapping": "carousel block containing cards"
+        },
+        {
+          "name": "faq-accordion",
+          "type": "ACCORDION",
+          "description": "FAQ section with expandable question/answer pairs, paired with an image on the left side",
+          "content": {
+            "itemCount": 4,
+            "items": [
+              "Wat kan ik verwachten tijdens mijn consult?",
+              "Zijn er bijwerkingen?",
+              "Hoe werken fillers precies?",
+              "Hoe snel zie ik resultaat?"
+            ],
+            "hasAdjacentImage": true
+          },
+          "edsMapping": "accordion block"
+        },
+        {
+          "name": "treatment-zone-picker",
+          "type": "CONTAINER (interactive)",
+          "description": "Same interactive face image with treatment zone panels as homepage (shared component via experience fragment or include)",
+          "edsMapping": "tabs block or custom treatment-zones block"
+        },
+        {
+          "name": "find-clinic-video",
+          "type": "CONTAINER",
+          "description": "Container with style class 'c-find-the-clinic-video'",
+          "edsMapping": "embed block or CTA section"
+        },
+        {
+          "name": "references",
+          "type": "TEXT",
+          "description": "Medical reference footnotes",
+          "edsMapping": "default content"
+        },
+        {
+          "name": "embed",
+          "type": "EMBED",
+          "description": "Embedded content (tracking or third-party integration)",
+          "edsMapping": "may not need migration"
+        }
+      ],
+      "ctas": [
+        {"text": "Meer informatie", "variant": "aaaem-button__secondary-filled", "count": 6},
+        {"text": "Vind je kliniek", "variant": "aaaem-button__primary-outline", "count": 2}
+      ],
+      "images": {
+        "total": 18,
+        "dynamicMedia": 4,
+        "lazyLoaded": 14
+      }
+    },
+
+    "faq": {
+      "url": "https://www.juvederm.nl/nl/qa",
+      "slug": "nl-qa",
+      "title": "Veelgestelde vragen Juvederm | Juvéderm® Netherlands",
+      "source": "bundle",
+      "pageLayout": {
+        "structure": "header-fragment → content-container → footer-fragment",
+        "bodyClasses": ["page", "basicpage"],
+        "totalElements": 1158
+      },
+      "sections": [
+        {
+          "name": "hero-teaser",
+          "type": "TEASER",
+          "description": "Full-width hero with background image and H1",
+          "content": {
+            "heading": "Ontdek het antwoord op je vraag",
+            "headingLevel": "h1",
+            "hasImage": true,
+            "hasVideo": false
+          },
+          "edsMapping": "hero block"
+        },
+        {
+          "name": "topic-menu",
+          "type": "SECTION-CONTAINER",
+          "description": "Topic filter/navigation menu with style class 'juvederm-topicmenu__wrapper'. Shows 'Zoek op onderwerp' placeholder text. Likely a sticky anchor navigation for FAQ sections.",
+          "styleClasses": ["juvederm-topicmenu__wrapper"],
+          "edsMapping": "custom topic-menu block or section navigation"
+        },
+        {
+          "name": "about-juvederm-section",
+          "type": "SECTION-CONTAINER",
+          "description": "Content section about what JUVÉDERM is. Contains TEXT components with headings, paragraphs, and an IMAGE. Anchored with #about-juvederm.",
+          "content": {
+            "headings": ["Wat is JUVÉDERM®?", "JUVÉDERM® is ontwikkeld om in allerlei behoeften te voorzien"],
+            "hasImage": true,
+            "textBlocks": 3
+          },
+          "edsMapping": "default content (text + image)"
+        },
+        {
+          "name": "benefit-carousel",
+          "type": "CAROUSEL",
+          "description": "Text-only carousel with benefits/highlights. 6 items (3 unique).",
+          "content": {
+            "itemCount": 6,
+            "slides": ["Langdurige resultaten", "Een uniek behandelplan", "Hoge kwaliteit"]
+          },
+          "edsMapping": "carousel block"
+        },
+        {
+          "name": "faq-content-blocks",
+          "type": "SECTION-CONTAINER (multiple)",
+          "description": "Large section with multiple FAQ topic groups. Each group contains TEXT+IMAGE pairs organized in a Q&A format. Sections cover: fillers explanation, hyaluronic acid, treatment process, side effects, costs, results duration, facial areas. Uses anchor IDs for navigation (#about-juvederm, #duration, #results, #side-effects, #facial-areas).",
+          "content": {
+            "topicGroups": [
+              "Wat zijn fillers?",
+              "Wat is hyaluronzuur?",
+              "Hoe werken fillers?",
+              "Behandeling voorbereiding",
+              "Bijwerkingen",
+              "Behandelingsduur en pijn",
+              "Kosten",
+              "Resultaatduur",
+              "Zones van het gezicht"
+            ],
+            "textBlocks": "~30+ TEXT components",
+            "imageBlocks": "~8 IMAGE components",
+            "containsTabularData": false
+          },
+          "edsMapping": "default content with section separators and anchor IDs"
+        },
+        {
+          "name": "references",
+          "type": "TEXT",
+          "description": "Reference footnotes",
+          "edsMapping": "default content"
+        }
+      ],
+      "ctas": [
+        {"text": "Vind je kliniek", "variant": "aaaem-button__primary-outline", "count": 2}
+      ],
+      "images": {
+        "total": 16,
+        "dynamicMedia": 0,
+        "lazyLoaded": 16
+      }
+    },
+
+    "locator": {
+      "url": "https://www.juvederm.nl/nl/find-a-clinic",
+      "slug": "nl-find-a-clinic",
+      "title": "Vind een kliniek | Juvéderm® Netherlands",
+      "source": "bundle",
+      "pageLayout": {
+        "structure": "header-fragment → content-container → footer-fragment",
+        "bodyClasses": ["page", "basicpage"],
+        "totalElements": 692
+      },
+      "sections": [
+        {
+          "name": "hero-section",
+          "type": "SECTION-CONTAINER",
+          "description": "Hero area with title 'Vind een kliniek bij jou in de buurt' and hero image. Uses style class 'juvederm-findaclinic-hero'. Contains heading and background image.",
+          "styleClasses": ["juvederm-find-a-clinic-page", "juvederm-findaclinic__container", "juvederm-findaclinic-hero"],
+          "content": {
+            "heading": "Vind een kliniek bij jou in de buurt",
+            "headingLevel": "h1",
+            "hasImage": true,
+            "imageSrc": "/adobe/dynamicmedia/deliver/dm-aid--f48d3ea7-c126-4acb-b55b-"
+          },
+          "edsMapping": "hero block"
+        },
+        {
+          "name": "clinic-search",
+          "type": "CLINIC-SEARCH",
+          "description": "Clinic finder search form with location input. Uses custom AEM component with classes 'c-search-location', 'c-search-area'. Contains text input for postcode/city name and submit button. Multiple input instances suggest responsive variants (mobile/desktop). Uses Google Places autocomplete (pac-container detected).",
+          "classes": ["c-search-location", "c-search-area", "c-search-location__container", "c-search-location__btn-container", "c-search-location__input-container"],
+          "content": {
+            "inputs": [
+              {"type": "text", "placeholder": "Zoek op postcode, plaatsnaam"},
+              {"type": "submit"}
+            ],
+            "headings": ["Zoek op plaatsnaam", "Of vul je locatie in"],
+            "usesGooglePlaces": true,
+            "hasMapComponent": false
+          },
+          "edsMapping": "custom clinic-finder block (interactive, needs JS)"
+        },
+        {
+          "name": "references",
+          "type": "TEXT",
+          "description": "Footer notes with medical references",
+          "styleClasses": ["footer-notes", "footer-info", "footer-list-notes"],
+          "edsMapping": "default content"
+        }
+      ],
+      "ctas": [
+        {"text": "Vind je kliniek", "variant": "aaaem-button__primary-outline"}
+      ],
+      "images": {
+        "total": 6,
+        "dynamicMedia": 1,
+        "lazyLoaded": 5
+      }
+    },
+
+    "legal": {
+      "url": "https://www.juvederm.nl/nl/disclaimer",
+      "slug": "nl-disclaimer",
+      "title": "Social media disclaimer | Juvéderm® Netherlands",
+      "source": "bundle",
+      "pageLayout": {
+        "structure": "header-fragment → content-container → footer-fragment",
+        "bodyClasses": ["page", "basicpage"],
+        "totalElements": 597
+      },
+      "sections": [
+        {
+          "name": "disclaimer-text",
+          "type": "TEXT",
+          "description": "Long-form legal text with heading 'Disclaimer'. Contains 13 paragraphs and 4 links. Pure text content with no images, cards, or interactive elements.",
+          "content": {
+            "heading": "Disclaimer",
+            "headingAlignment": "center",
+            "paragraphCount": 13,
+            "linkCount": 4,
+            "hasList": false,
+            "textPreview": "Deze Facebookpagina, Instagrampagina of Youtube-kanaal is uitsluitend bedoeld voor inwoners van Nederland..."
+          },
+          "edsMapping": "default content (text only)"
+        }
+      ],
+      "ctas": [],
+      "images": {
+        "total": 5,
+        "dynamicMedia": 0,
+        "note": "Images are from header/footer only"
+      }
+    },
+
+    "contact": {
+      "url": "https://www.juvederm.nl/nl/contact-us",
+      "slug": "nl-contact-us",
+      "title": "Neem contact op",
+      "source": "bundle",
+      "pageLayout": {
+        "structure": "header-fragment → content-container → footer-fragment",
+        "bodyClasses": ["page", "basicpage"],
+        "totalElements": 585
+      },
+      "sections": [
+        {
+          "name": "contact-info",
+          "type": "TEXT",
+          "description": "Simple contact information section with heading 'NEEM CONTACT OP' (center-aligned). Contains company address, phone number, and email links. 1 paragraph, 2 links.",
+          "content": {
+            "heading": "NEEM CONTACT OP",
+            "headingAlignment": "center",
+            "paragraphCount": 1,
+            "linkCount": 2,
+            "textPreview": "Allergan Aesthetics, een AbbVie onderneming Bezoekersadres: Wegalaan 9 2132 JD Hoofddorp..."
+          },
+          "edsMapping": "default content (text only)"
+        }
+      ],
+      "ctas": [],
+      "images": {
+        "total": 5,
+        "dynamicMedia": 0,
+        "note": "Images are from header/footer only"
+      }
+    }
+  },
+
+  "sharedComponents": {
+    "header": {
+      "type": "experience-fragment",
+      "description": "AEM Experience Fragment used as header across all pages. Contains Juvéderm logo, main navigation with dropdown menus, hamburger menu for mobile, and 'Vind je kliniek' CTA button.",
+      "navigation": {
+        "type": "mega-menu",
+        "sections": [
+          {
+            "label": "Behandeling",
+            "children": ["Lippen", "Ogen", "Accentueren", "Herstel", "Man"]
+          },
+          {
+            "label": "Q&A (implicit)",
+            "children": ["Over Juvéderm®", "Kosten", "Langdurige resultaten", "Veiligheid", "Zones van het gezicht"]
+          },
+          {
+            "label": "Vind je kliniek",
+            "href": "/nl/find-a-clinic"
+          }
+        ]
+      },
+      "mobileNav": {
+        "type": "modal",
+        "class": "juvederm-navigation--mobile",
+        "triggeredBy": "MENU button"
+      }
+    },
+    "footer": {
+      "type": "experience-fragment",
+      "description": "AEM Experience Fragment used as footer. Contains warning message, legal text, navigation links, social media links, and logos.",
+      "classes": ["juvederm-footer"],
+      "content": {
+        "warningMessage": "Kijk uit. Jezelf mooier maken kan lelijk uitpakken. Een geslaagde ingreep begint bij een goede arts.",
+        "warningIcon": "/adobe/dynamicmedia/deliver/dm-aid--721086fc-bf03-4770-a1ca-9f0ead9b9ad0/icon-kijk-uit-melding-white",
+        "legalText": "Materialen geleverd door Allergan Aesthetics, een bedrijf van AbbVie...",
+        "ctaButtons": [
+          {"text": "Vind je kliniek", "href": "/nl/find-a-clinic", "variant": "primary-outline"},
+          {"text": "Instagram", "href": "https://www.instagram.com/juvederm.nl/", "variant": "primary-filled"},
+          {"text": "Facebook", "href": "https://www.facebook.com/juvederm.nl", "variant": "primary-filled"}
+        ],
+        "navLinks": [
+          {"text": "Lippen", "href": "/nl/treatment/lips"},
+          {"text": "Ogen", "href": "/nl/treatment/eye-area"},
+          {"text": "Accentueren", "href": "/nl/treatment/enhance"},
+          {"text": "Herstel", "href": "/nl/treatment/restore"},
+          {"text": "Man", "href": "/nl/treatment/male"},
+          {"text": "Over Juvéderm®", "href": "/nl/qa#about-juvederm"},
+          {"text": "Kosten", "href": "/nl/qa#duration"},
+          {"text": "Langdurige resultaten", "href": "/nl/qa#results"},
+          {"text": "Veiligheid", "href": "/nl/qa#side-effects"},
+          {"text": "Zones van het gezicht", "href": "/nl/qa#facial-areas"}
+        ],
+        "legalLinks": [
+          {"text": "Neem contact op", "href": "/nl/contact-us"},
+          {"text": "Privacy beleid", "href": "https://www.abbvie.nl/privacy.html"},
+          {"text": "Algemene voorwaarden", "href": "https://www.abbvie.nl/termsofuse.html"},
+          {"text": "Social media disclaimer", "href": "/nl/disclaimer"},
+          {"text": "Cookies settings", "href": "#onetrust"},
+          {"text": "Algemene voorwaarden kliniekzoeker", "href": "/nl/algemene-voorwaarden-kliniekzoeker"}
+        ],
+        "logos": ["Juvéderm logo", "Allergan Aesthetics logo"]
+      }
+    }
+  },
+
+  "componentInventory": {
+    "summary": "The site is built on AEM with AbbVie's custom component library (aaaem-* prefix). Key content components include teasers, carousels, cards, accordions, tabs, and a custom clinic-finder search.",
+    "components": [
+      {
+        "name": "aaaem-teaser / cmp-teaser",
+        "usage": "Hero banners on homepage, treatment pages, and FAQ page",
+        "variants": ["hero-teaser (with video)", "hero-teaser (image only)"],
+        "usedByArchetypes": ["homepage", "treatment", "faq"],
+        "frequency": "1 per page (always first content element)"
+      },
+      {
+        "name": "aaaem-carousel / cmp-carousel",
+        "usage": "Before/after photo comparisons, benefit text slides, product card carousels",
+        "variants": ["before-after images", "text-only slides", "card slides"],
+        "usedByArchetypes": ["homepage", "treatment", "faq"],
+        "frequency": "1-2 per page"
+      },
+      {
+        "name": "aaaem-card",
+        "usage": "Benefit highlights (text-only) and product cards (with images)",
+        "variants": ["text-only (no image, no link)", "product card (with background image)"],
+        "usedByArchetypes": ["homepage", "treatment"],
+        "frequency": "4-5 cards per carousel or group"
+      },
+      {
+        "name": "aaaem-accordion / cmp-accordion",
+        "usage": "FAQ section on treatment pages with expandable Q&A pairs",
+        "variants": ["standard accordion"],
+        "usedByArchetypes": ["treatment"],
+        "frequency": "1 per treatment page, 4 items"
+      },
+      {
+        "name": "aaaem-text / cmp-text",
+        "usage": "Body text, footnotes, references. Most common component.",
+        "variants": ["standard paragraph", "footnote/small text", "footer-list-notes"],
+        "usedByArchetypes": ["all"],
+        "frequency": "5-30+ per page"
+      },
+      {
+        "name": "aaaem-title / cmp-title",
+        "usage": "Section headings with alignment control",
+        "variants": ["alignment-default", "alignment-center"],
+        "usedByArchetypes": ["legal", "contact", "locator"],
+        "frequency": "0-2 per page"
+      },
+      {
+        "name": "aaaem-image / cmp-image",
+        "usage": "Standalone images, often paired with text",
+        "variants": ["with link", "without link"],
+        "usedByArchetypes": ["all"],
+        "frequency": "2-10 per page"
+      },
+      {
+        "name": "aaaem-button / cmp-button",
+        "usage": "CTA buttons throughout the site",
+        "variants": ["primary-filled", "primary-outline", "secondary-filled"],
+        "usedByArchetypes": ["all (via header/footer)"],
+        "frequency": "2-6 per page"
+      },
+      {
+        "name": "aaaem-container / cmp-container",
+        "usage": "Layout containers with style variants for sections",
+        "variants": ["standard", "card", "carouselslide", "scroll-reveal-before-sibling", "visible", "c-find-the-clinic-video", "juvederm-topicmenu__wrapper", "juvederm-footer", "footer-notes"],
+        "usedByArchetypes": ["all"],
+        "frequency": "10-50+ per page (structural)"
+      },
+      {
+        "name": "aaaem-modal",
+        "usage": "Mobile navigation modal",
+        "variants": ["juvederm-navigation--mobile"],
+        "usedByArchetypes": ["all (header)"],
+        "frequency": "1 per page"
+      },
+      {
+        "name": "c-search-location (custom)",
+        "usage": "Clinic finder search with Google Places autocomplete",
+        "variants": ["desktop", "mobile"],
+        "usedByArchetypes": ["locator"],
+        "frequency": "1 per locator page"
+      },
+      {
+        "name": "aaaem-embed",
+        "usage": "Third-party embeds (tracking, integrations)",
+        "variants": [],
+        "usedByArchetypes": ["treatment"],
+        "frequency": "0-1 per page"
+      }
+    ]
+  },
+
+  "designPatterns": {
+    "ctaPattern": {
+      "primary": {"text": "Vind je kliniek", "variant": "primary-outline", "usage": "header, footer, inline"},
+      "secondary": {"text": "Meer informatie", "variant": "secondary-filled", "usage": "cards, content sections"},
+      "social": {"texts": ["Instagram", "Facebook"], "variant": "primary-filled", "usage": "footer only"}
+    },
+    "imageStrategy": {
+      "delivery": "Adobe Dynamic Media (/adobe/dynamicmedia/deliver/dm-aid--*)",
+      "lazyLoading": "Placeholder base64 GIF with lazy src swap",
+      "formats": "JPEG with WebP preference (?preferwebp=true&quality=*)",
+      "responsiveness": "Width parameter in URL (?width=1600)"
+    },
+    "sectionStyles": [
+      "card - container wrapping card components",
+      "carouselslide - individual carousel item wrapper",
+      "scroll-reveal-before-sibling - scroll-triggered reveal animation",
+      "visible - visibility toggle for interactive sections",
+      "juvederm-topicmenu__wrapper - FAQ topic navigation",
+      "juvederm-findaclinic-hero - clinic finder hero",
+      "c-find-the-clinic-video - video/CTA section",
+      "footer-notes / footer-info / footer-list-notes - reference text styling"
+    ],
+    "typography": {
+      "fonts": ["Typekit (sic6ayn)", "Google Fonts (Assistant)"],
+      "headingLevels": ["h1 (hero only)", "h2 (section headings)", "h3-h4 (subsections)"]
+    },
+    "colorScheme": "Warm tones with pink/coral accents (Juvéderm brand)",
+    "layout": {
+      "maxWidth": "Full-width hero, contained content sections",
+      "gridSystem": "AEM responsive grid (12-column)",
+      "breakpoints": "Desktop (1440px), Tablet (implied), Mobile (390px)"
+    }
+  }
+}

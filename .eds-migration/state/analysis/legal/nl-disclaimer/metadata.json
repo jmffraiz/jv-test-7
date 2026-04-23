@@ -1,0 +1,15 @@
+{
+  "url": "https://www.juvederm.nl/nl/disclaimer",
+  "title": "Social media disclaimer | Juvéderm® Netherlands",
+  "archetype": "legal",
+  "slug": "nl-disclaimer",
+  "source": "bundle",
+  "capturedAt": "2026-04-23T17:41:36.390Z",
+  "ogTitle": "Social media disclaimer | Juvéderm® Netherlands",
+  "imageCount": 1,
+  "externalImages": 1,
+  "bundleScreenshots": {
+    "desktop": "screenshot.png",
+    "mobile": "../../source-bundle/pages/nl-disclaimer/mobile.png"
+  }
+}

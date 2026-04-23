@@ -1,0 +1,18 @@
+{
+  "url": "https://www.juvederm.nl/",
+  "title": "JUVÉDERM Nederlands",
+  "archetype": "homepage",
+  "slug": "homepage",
+  "source": "bundle",
+  "capturedAt": "2026-04-23T17:41:36.094Z",
+  "metaDescription": "Juvéderm® facial fillers help to enhance, restore or hydrate your features. Embrace what makes you, you.",
+  "ogTitle": "JUVÉDERM Nederlands",
+  "ogDescription": "Juvéderm® facial fillers help to enhance, restore or hydrate your features. Embrace what makes you, you.",
+  "ogImage": "/content/dam/juvederm-ous/common/allergan_header_04_16by9_001.png",
+  "imageCount": 15,
+  "externalImages": 4,
+  "bundleScreenshots": {
+    "desktop": "screenshot.png",
+    "mobile": "../../source-bundle/pages/homepage/mobile.png"
+  }
+}

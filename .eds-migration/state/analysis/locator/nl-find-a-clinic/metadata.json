@@ -1,0 +1,17 @@
+{
+  "url": "https://www.juvederm.nl/nl/find-a-clinic",
+  "title": " Vind een kliniek | Juvéderm® Netherlands",
+  "archetype": "locator",
+  "slug": "nl-find-a-clinic",
+  "source": "bundle",
+  "capturedAt": "2026-04-23T17:41:36.329Z",
+  "metaDescription": "Find the right clinic for you",
+  "ogTitle": " Vind een kliniek | Juvéderm® Netherlands",
+  "ogDescription": "Find the right clinic for you",
+  "imageCount": 2,
+  "externalImages": 2,
+  "bundleScreenshots": {
+    "desktop": "screenshot.png",
+    "mobile": "../../source-bundle/pages/nl-find-a-clinic/mobile.png"
+  }
+}
