@@ -1,0 +1,68 @@
+{
+  "verdict": "PASS",
+  "issues": [
+    {
+      "severity": "low",
+      "criterion": "aaaem-modal not explicitly mapped in block-inventory.json",
+      "details": "sample-scrape.json componentInventory lists 'aaaem-modal' (used across all pages via the header for mobile navigation). block-inventory.json has no explicit entry for it. The mobile nav modal is implicitly covered by the sharedComponents.header mapping to /nav, but the inventory does not call this out.",
+      "remediation": "Add a note to the sharedComponents.header entry clarifying that the mobile navigation modal (aaaem-modal / juvederm-navigation--mobile) is handled by the EDS nav block JS, not a separate block."
+    },
+    {
+      "severity": "low",
+      "criterion": "legal and contact archetypes not explicitly listed in any block's archetypes array",
+      "details": "The blocks[] array only lists archetypes: homepage, treatment, faq, locator. legal and contact pages use only default content (text, headings, images, buttons), so they are covered by defaultContent mappings with archetypes: ['all']. However, the archetype coverage check shows legal and contact are absent from named block archetype lists, which could be misread as uncovered.",
+      "remediation": "Confirm in documentation or block notes that legal and contact are intentionally covered 100% by default content mappings, requiring no custom blocks."
+    }
+  ],
+  "evidence": [
+    {
+      "page": "block-inventory.json structure check",
+      "source_artifact": ".eds-migration/state/block-inventory.json",
+      "preview_artifact": "N/A",
+      "render_strategy": "Direct file read + JSON parse",
+      "finding": "block-inventory.json is valid JSON. Contains: 9 custom blocks, 5 defaultContent mappings, 2 sharedComponents (header+footer), 3 sectionStyles, 9 implementationPriority entries, designTokens object. All required structural fields present. PASS.",
+      "viewports": []
+    },
+    {
+      "page": "component coverage cross-reference",
+      "source_artifact": ".eds-migration/state/sample-scrape.json#componentInventory",
+      "preview_artifact": ".eds-migration/state/block-inventory.json",
+      "render_strategy": "Programmatic cross-reference of sourceComponents vs componentInventory",
+      "finding": "11 of 12 components from sample-scrape componentInventory are explicitly covered. The 12th (aaaem-modal) is implicitly covered via the header sharedComponent mapping. All 24 unique source component identifiers catalogued in block-inventory (aaaem-*, cmp-*, c-search-*, juvederm-topicmenu__wrapper, treatment-zone-picker) are mapped. PASS with low-severity note on aaaem-modal.",
+      "viewports": []
+    },
+    {
+      "page": "section-to-block mapping check",
+      "source_artifact": ".eds-migration/state/sample-scrape.json",
+      "preview_artifact": ".eds-migration/state/block-inventory.json",
+      "render_strategy": "edsMapping field cross-reference across all 6 archetypes",
+      "finding": "Every section across all 6 archetypes has an edsMapping that resolves to a named block or default content: homepage (8 sections → all mapped), treatment (10 sections → all mapped), faq (6 sections → all mapped), locator (3 sections → all mapped), legal (1 section → default content), contact (1 section → default content). No section is unmapped. PASS.",
+      "viewports": []
+    },
+    {
+      "page": "archetype coverage",
+      "source_artifact": ".eds-migration/state/block-inventory.json",
+      "preview_artifact": "N/A",
+      "render_strategy": "JSON field analysis",
+      "finding": "All 6 archetypes are covered: homepage, treatment, faq, locator explicitly named in blocks[].archetypes; legal and contact covered entirely through defaultContent mappings with archetypes='all'. PASS.",
+      "viewports": []
+    },
+    {
+      "page": "content model EDS table format check",
+      "source_artifact": ".eds-migration/state/block-inventory.json#blocks",
+      "preview_artifact": "N/A",
+      "render_strategy": "JSON review of contentModel.rows and cells",
+      "finding": "All 9 custom blocks have contentModel.rows arrays with cell arrays, representing valid EDS block table structures: hero (3 rows: bg-image, h1, optional video URL), carousel (N slide rows), cards (N card rows with 4 cells), accordion (N Q&A rows with 2 cells), treatment-zones (1 portrait row + N zone rows), topic-menu (N anchor link rows), clinic-finder (2 config rows), columns (1 two-cell row), embed (1 URL row). All models are structurally sound for EDS document table authoring. PASS.",
+      "viewports": []
+    },
+    {
+      "page": "implementation priority and design tokens",
+      "source_artifact": ".eds-migration/state/block-inventory.json#implementationPriority",
+      "preview_artifact": "N/A",
+      "render_strategy": "JSON review",
+      "finding": "9 priority entries rank all 9 custom blocks 1–9. Priority order is sensible: hero (P1, used on all pages), cards (P2), carousel (P3), accordion (P4), columns (P5, boilerplate), treatment-zones (P6), topic-menu (P7), clinic-finder (P8, most complex), embed (P9). designTokens documents fonts, button styles, Adobe Dynamic Media image delivery pattern, and breakpoints. PASS.",
+      "viewports": []
+    }
+  ],
+  "summary": "PASS with 2 low-severity issues: (1) aaaem-modal is not explicitly mapped (implicitly covered by header sharedComponent); (2) legal and contact archetypes are absent from blocks[].archetypes arrays but are fully covered by defaultContent 'all' mappings. All 12 source components are mapped, all 6 archetypes are covered, all 9 custom blocks have valid EDS table content models, and every section across all archetypes has a concrete edsMapping to a block or default content."
+}
