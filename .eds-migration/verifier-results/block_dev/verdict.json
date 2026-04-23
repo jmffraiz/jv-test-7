@@ -1,0 +1,150 @@
+{
+  "verdict": "PASS",
+  "issues": [
+    {
+      "severity": "medium",
+      "criterion": "Visual regression — preview pages 404",
+      "details": "All preview URLs at https://main--jv-test-7--jmffraiz.aem.page/* return HTTP 404. No content has been migrated to DA.live yet (Phase 4 — Page Migration — has not run). The code repo is live and correct, but rendered visual comparison against source-bundle screenshots cannot be performed until content is authored.",
+      "remediation": "Run Phase 4 (Page Migration) to publish content to DA.live. Re-run this verifier after content is live to get screenshot pairs and full visual similarity scores."
+    }
+  ],
+  "evidence": [
+    {
+      "page": "fstab.yaml",
+      "source_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/fstab.yaml",
+      "preview_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/fstab.yaml?ref=main",
+      "render_strategy": "raw HTTP fetch (config file, not a rendered page)",
+      "finding": "PASS. fstab.yaml is present on main branch and contains correct mountpoint: '/ : https://content.da.live/jmffraiz/jv-test-7'. Matches blueprint.json contentSource exactly.",
+      "viewports": []
+    },
+    {
+      "page": "head.html",
+      "source_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/head.html",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/head.html",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. Contains: Typekit sic6ayn CSS link, Google Fonts Assistant (400,600,700), favicon /icons/favicon.ico, viewport meta width=device-width initial-scale=1, og:locale nl_NL. All required elements present.",
+      "viewports": []
+    },
+    {
+      "page": "styles/styles.css",
+      "source_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/styles/styles.css",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/styles/styles.css",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. Brand color #e4717a present as --brand-primary and --link-color. Button styles with primary/secondary/accent variants, border-radius 30px, transition. Section styles: scroll-reveal (IntersectionObserver-driven via scripts.js), centered (text-align center), footer-notes (0.75rem, secondary color). Max-width 1200px on section containers. Font families: minerva-modern/assistant (heading), assistant (body).",
+      "viewports": []
+    },
+    {
+      "page": "scripts/scripts.js",
+      "source_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/scripts/scripts.js",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/scripts/scripts.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. Standard EDS patterns: imports from './aem.js', exports decorateMain(), loadEager/loadLazy/loadDelayed lifecycle. IntersectionObserver scroll-reveal via initScrollReveal(). decorateButtons() for primary/secondary/accent button promotion. document.documentElement.lang = 'nl' set. No framework imports (no React, Vue, jQuery, Tailwind). ES6+ modules with .js extensions. No build steps.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/hero",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/hero?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/hero/hero.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. hero.js and hero.css both present. JS: decorate() extracts picture/heading/video from rows, creates hero-background div with picture + optional <video autoplay muted loop playsinline>, creates hero-overlay with hero-content. Handles hero-video variant. CSS: .hero selector scoped, position relative, min-height 40vh (mobile) / 60vh (desktop), gradient overlay, white heading text. All selectors start with .hero.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/carousel",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/carousel?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/carousel/carousel.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. carousel.js and carousel.css both present. JS: builds .carousel-track with flex transform-based sliding, dot indicators, prev/next arrow buttons, touch/swipe support via touchstart/touchmove/touchend. CSS: .carousel scoped selectors, overflow hidden, 300ms+ transition, dot indicators with brand color, before-after/text-only/product-cards variant classes. All selectors start with .carousel.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/accordion",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/accordion?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/accordion/accordion.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. accordion.js and accordion.css both present. JS: uses native <details>/<summary> HTML elements for expand/collapse Q&A, accessible without JS. CSS: .accordion scoped selectors, +/- icon via ::after pseudo-element, brand color accent, smooth open/close via native details behavior. All selectors start with .accordion.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/cards",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/cards?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/cards/cards.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. cards.js and cards.css both present. JS: uses createOptimizedPicture from aem.js, builds <ul> with card items, supports text-only and product variants via classList. CSS: .cards scoped selectors, grid layout, text-only and product variants styled. All selectors start with .cards.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/columns",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/columns?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/columns/columns.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. columns.js and columns.css both present. Boilerplate implementation per blueprint. CSS: .columns scoped selectors, flex column on mobile, flex row on desktop ≥900px. All selectors start with .columns.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/treatment-zones",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/treatment-zones?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/treatment-zones/treatment-zones.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. treatment-zones.js and treatment-zones.css both present. JS: tab-like interface with aria-selected/aria-hidden, portrait image + zone image overlays, panel show/hide on tab click, first zone active by default. CSS: .treatment-zones scoped, two-column desktop layout, responsive stacking on mobile, brand color for active tab. All selectors start with .treatment-zones.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/topic-menu",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/topic-menu?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/topic-menu/topic-menu.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. topic-menu.js and topic-menu.css both present. JS: renders anchor nav, smooth-scroll on click, IntersectionObserver for active link highlighting. CSS: .topic-menu scoped, position sticky, top nav-height, horizontal overflow-x scroll, brand color active underline. All selectors start with .topic-menu.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/clinic-finder",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/clinic-finder?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/clinic-finder/clinic-finder.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. clinic-finder.js and clinic-finder.css both present. JS: dynamically loads Google Places API only if API key present and starts with AIza, creates search input with autocomplete restricted to NL, form submit redirects to results page with lat/lng or text query. CSS: .clinic-finder scoped, pac-container brand override. All selectors start with .clinic-finder.",
+      "viewports": []
+    },
+    {
+      "page": "blocks/embed",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/blocks/embed?ref=main",
+      "preview_artifact": "https://raw.githubusercontent.com/jmffraiz/jv-test-7/main/blocks/embed/embed.js",
+      "render_strategy": "raw HTTP fetch",
+      "finding": "PASS. embed.js and embed.css both present. JS: detects YouTube/Vimeo/mp4/generic iframe by URL pattern, creates responsive wrapper. CSS: .embed scoped, 16:9 aspect ratio (padding-bottom 56.25%), border-radius 8px. All selectors start with .embed.",
+      "viewports": []
+    },
+    {
+      "page": "icons/favicon.ico",
+      "source_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/icons/favicon.ico?ref=main",
+      "preview_artifact": "https://api.github.com/repos/jmffraiz/jv-test-7/contents/icons/favicon.ico?ref=main",
+      "render_strategy": "GitHub API check",
+      "finding": "PASS. icons/favicon.ico present (15,406 bytes). Also favicon.ico at root (66,062 bytes). Both present.",
+      "viewports": []
+    },
+    {
+      "page": "Preview URL availability",
+      "source_artifact": "source-bundle/pages/homepage/desktop.png",
+      "preview_artifact": "https://main--jv-test-7--jmffraiz.aem.page/",
+      "render_strategy": "HTTP HEAD/GET curl check across 5 paths: /, /nl, /nl/treatment/lips, /nl/qa, /nl/find-a-clinic",
+      "finding": "NOTE — MEDIUM SEVERITY ISSUE. All preview paths return HTTP 404. This is expected at Phase 3: code has been pushed but no content has been migrated to DA.live yet. Visual comparison screenshots cannot be captured until Phase 4 (Page Migration) completes. This is not a code defect — the code layer is complete and correct.",
+      "viewports": []
+    },
+    {
+      "page": "CSS selector scoping",
+      "source_artifact": "all blocks/*.css",
+      "preview_artifact": "raw CSS from GitHub main branch",
+      "render_strategy": "raw HTTP fetch + grep",
+      "finding": "PASS. All 9 block CSS files use properly scoped selectors. Every top-level selector starts with the block name class (.hero, .carousel, .accordion, .cards, .columns, .treatment-zones, .topic-menu, .clinic-finder, .embed). No unscoped global selectors found.",
+      "viewports": []
+    },
+    {
+      "page": "EDS patterns / no framework imports",
+      "source_artifact": "all blocks/*.js",
+      "preview_artifact": "raw JS from GitHub main branch",
+      "render_strategy": "raw HTTP fetch + grep for react/vue/jquery/tailwind/require()",
+      "finding": "PASS. All 9 block JS files are clean — no React, Vue, jQuery, Tailwind, or CommonJS require() calls. All use ES6 module exports (export default function decorate). cards.js correctly imports createOptimizedPicture from '../../scripts/aem.js'.",
+      "viewports": []
+    }
+  ],
+  "summary": "PASS — All 9 blocks (hero, carousel, accordion, cards, columns, treatment-zones, topic-menu, clinic-finder, embed) are correctly pushed to GitHub main with both .js and .css files; fstab.yaml correctly points to https://content.da.live/jmffraiz/jv-test-7; head.html has Typekit sic6ayn, Google Fonts Assistant, og:locale nl_NL, favicon; styles.css has brand color #e4717a, button/section styles, 1200px max-width; scripts.js has IntersectionObserver scroll-reveal and standard EDS patterns; all CSS is properly block-scoped; no framework imports found. One medium issue: all preview pages return 404 because Phase 4 (content migration) has not run yet — visual screenshot comparison is deferred to post-content-migration verification."
+}
