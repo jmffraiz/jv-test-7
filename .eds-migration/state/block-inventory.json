@@ -1,0 +1,367 @@
+{
+  "generatedAt": "2026-04-23T20:00:00.000Z",
+  "site": "https://www.juvederm.nl",
+  "repo": "jmffraiz/jv-test-7",
+  "branch": "migration-state/26d1d7e2",
+  "description": "Block inventory mapping source AEM components (aaaem-* / cmp-*) to EDS blocks for the juvederm.nl migration.",
+
+  "blocks": [
+    {
+      "blockName": "hero",
+      "sourceComponents": ["aaaem-teaser", "cmp-teaser"],
+      "archetypes": ["homepage", "treatment", "faq", "locator"],
+      "contentModel": {
+        "description": "Full-width hero banner with background media and heading overlay.",
+        "rows": [
+          {
+            "row": 1,
+            "cells": [
+              "Background image (or poster frame for video)"
+            ]
+          },
+          {
+            "row": 2,
+            "cells": [
+              "H1 heading text"
+            ]
+          },
+          {
+            "row": 3,
+            "cells": [
+              "(Optional) Background video URL — mp4 link"
+            ]
+          }
+        ]
+      },
+      "variants": [
+        "hero-video — homepage hero with looping background video + image fallback",
+        "hero-image — treatment/faq/locator hero with background image only"
+      ],
+      "customCode": true,
+      "notes": "Source uses aaaem-teaser with classes: hero-teaser, has-media, has-full-bleed-image, has-video, scroll-effect-none. Video variant only on homepage. Images served via Adobe Dynamic Media (dm-aid URLs) — will need re-hosting or path mapping. Always the first content element on a page."
+    },
+    {
+      "blockName": "carousel",
+      "sourceComponents": ["aaaem-carousel", "cmp-carousel"],
+      "archetypes": ["homepage", "treatment", "faq"],
+      "contentModel": {
+        "description": "Sliding carousel with dot indicators. Each row is one slide. Content per slide varies by variant.",
+        "rows": [
+          {
+            "row": "1..N",
+            "cells": [
+              "Slide content: image(s) and/or text depending on variant"
+            ]
+          }
+        ]
+      },
+      "variants": [
+        "before-after — two images per slide with 'Voor'/'Na' labels (homepage)",
+        "text-only — single paragraph of benefit text per slide (treatment, faq)",
+        "product-cards — card with background image + title + description per slide (treatment)"
+      ],
+      "customCode": true,
+      "notes": "Source uses 'carouselslide' container style class per item. Items are often duplicated (mobile/desktop variants in source — EDS version should be responsive with a single set). Homepage has 10 items (5 unique before/after pairs). Treatment benefit carousel has 6 items (3 unique). Product card carousel has 10 items (5 unique products). Needs touch/swipe support and dot indicators."
+    },
+    {
+      "blockName": "cards",
+      "sourceComponents": ["aaaem-card"],
+      "archetypes": ["homepage", "treatment"],
+      "contentModel": {
+        "description": "Grid of cards. Each row defines one card.",
+        "rows": [
+          {
+            "row": "1..N",
+            "cells": [
+              "Cell 1: (Optional) Card image",
+              "Cell 2: Card title (bold or heading)",
+              "Cell 3: Card body text",
+              "Cell 4: (Optional) CTA link"
+            ]
+          }
+        ]
+      },
+      "variants": [
+        "text-only — no image, title + body text only (homepage benefit cards, 4 cards)",
+        "product — background image + title + description (treatment product cards)"
+      ],
+      "customCode": true,
+      "notes": "Text-only variant on homepage shows 4 value-proposition cards in a horizontal row. Product variant on treatment pages has background images from Dynamic Media. Often rendered inside a carousel on treatment pages (product-cards carousel variant). The 'card' container style class wraps these in source AEM."
+    },
+    {
+      "blockName": "accordion",
+      "sourceComponents": ["aaaem-accordion", "cmp-accordion"],
+      "archetypes": ["treatment"],
+      "contentModel": {
+        "description": "Expandable/collapsible FAQ pairs. Each row is one Q&A item.",
+        "rows": [
+          {
+            "row": "1..N",
+            "cells": [
+              "Cell 1: Question text (becomes the clickable heading)",
+              "Cell 2: Answer text (revealed on expand)"
+            ]
+          }
+        ]
+      },
+      "variants": [],
+      "customCode": true,
+      "notes": "Used on treatment pages for FAQ section. Typically 4 items per page. Often paired with an adjacent image on the left side (the image is outside the accordion block, in the same section). Standard expand/collapse with toggle icon."
+    },
+    {
+      "blockName": "treatment-zones",
+      "sourceComponents": ["treatment-zone-picker", "aaaem-container (interactive)"],
+      "archetypes": ["homepage", "treatment"],
+      "contentModel": {
+        "description": "Interactive face portrait with toggling text panels for different treatment zones. Each row defines one zone.",
+        "rows": [
+          {
+            "row": 1,
+            "cells": [
+              "Cell 1: Portrait/face image (shared across zones)"
+            ]
+          },
+          {
+            "row": "2..N",
+            "cells": [
+              "Cell 1: Zone label (e.g., 'Versterk contouren', 'Stralende oogopslag', 'Herstel volume', 'Vollere lippen')",
+              "Cell 2: Zone description text",
+              "Cell 3: (Optional) Zone-specific image"
+            ]
+          }
+        ]
+      },
+      "variants": [],
+      "customCode": true,
+      "notes": "Complex interactive component. Source uses visibility toggling via style classes on aaaem-container children. Has 4 zones: contouren, ogen, volume, lippen. Uses two Dynamic Media images (female and male portraits). Shared across homepage and treatment pages (was an AEM experience fragment). Needs custom JS for tab-like toggling behavior. Consider implementing as a tabs-style interaction with image swap."
+    },
+    {
+      "blockName": "topic-menu",
+      "sourceComponents": ["juvederm-topicmenu__wrapper"],
+      "archetypes": ["faq"],
+      "contentModel": {
+        "description": "Sticky anchor navigation for FAQ page sections. Each row is one anchor link.",
+        "rows": [
+          {
+            "row": "1..N",
+            "cells": [
+              "Cell 1: Link text (topic label)",
+              "Cell 2: Anchor target (e.g., #about-juvederm, #duration, #results, #side-effects, #facial-areas)"
+            ]
+          }
+        ]
+      },
+      "variants": [],
+      "customCode": true,
+      "notes": "Used only on the FAQ page. Source has 'Zoek op onderwerp' placeholder text and renders as a dropdown/filter navigation. In EDS, implement as a sticky horizontal nav bar with smooth-scroll to anchor IDs. Topics: Over Juvéderm®, Kosten, Langdurige resultaten, Veiligheid, Zones van het gezicht."
+    },
+    {
+      "blockName": "clinic-finder",
+      "sourceComponents": ["c-search-location", "c-search-area"],
+      "archetypes": ["locator"],
+      "contentModel": {
+        "description": "Clinic finder search interface with location input. Single-row block with configuration.",
+        "rows": [
+          {
+            "row": 1,
+            "cells": [
+              "Cell 1: Heading text (e.g., 'Zoek op plaatsnaam')",
+              "Cell 2: Input placeholder text (e.g., 'Zoek op postcode, plaatsnaam')"
+            ]
+          },
+          {
+            "row": 2,
+            "cells": [
+              "Cell 1: Google Places API key or config reference",
+              "Cell 2: Results page URL (e.g., /nl/clinics)"
+            ]
+          }
+        ]
+      },
+      "variants": [],
+      "customCode": true,
+      "notes": "Heavy custom JS block. Source uses Google Places autocomplete (pac-container detected). Has responsive desktop/mobile input variants in source. Needs Google Maps/Places JS API integration. Search submits to a results page (/nl/clinics). Consider whether to replicate full search or simplify to a form that redirects. This is the most complex custom block in the migration."
+    },
+    {
+      "blockName": "columns",
+      "sourceComponents": ["aaaem-container"],
+      "archetypes": ["homepage", "treatment", "faq"],
+      "contentModel": {
+        "description": "Two-column layout for text + image side-by-side sections.",
+        "rows": [
+          {
+            "row": 1,
+            "cells": [
+              "Cell 1: Text content (heading + paragraph)",
+              "Cell 2: Image"
+            ]
+          }
+        ]
+      },
+      "variants": [
+        "before-after — two images with Voor/Na labels (treatment pages)",
+        "text-image — text on left, image on right (intro sections)"
+      ],
+      "customCode": false,
+      "notes": "Maps from aaaem-container with 'scroll-reveal-before-sibling' style class. Used for intro-text-with-image sections on homepage and treatment pages. The before/after variant on treatment pages shows a static image pair (not in carousel). Can use EDS boilerplate columns block."
+    },
+    {
+      "blockName": "embed",
+      "sourceComponents": ["aaaem-embed", "c-find-the-clinic-video"],
+      "archetypes": ["homepage", "treatment"],
+      "contentModel": {
+        "description": "Embedded third-party content or video.",
+        "rows": [
+          {
+            "row": 1,
+            "cells": [
+              "Cell 1: Embed URL or video URL"
+            ]
+          }
+        ]
+      },
+      "variants": [
+        "video — embedded video player",
+        "tracking — third-party tracking/integration script"
+      ],
+      "customCode": true,
+      "notes": "Source has 'c-find-the-clinic-video' container (likely a video embed or CTA) and aaaem-embed for tracking. The video container appears on homepage and treatment pages. May be partially client-side rendered in source. Evaluate whether tracking embeds need migration or should be replaced with EDS-native analytics."
+    }
+  ],
+
+  "defaultContent": {
+    "description": "These source AEM components map to plain EDS default content (standard HTML elements rendered by aem.js) and do NOT require custom blocks.",
+    "mappings": [
+      {
+        "sourceComponents": ["aaaem-text", "cmp-text"],
+        "edsElement": "Paragraphs (<p>), rich text",
+        "archetypes": ["all"],
+        "notes": "Most common component. Includes body copy, footnotes, disclaimers, references. Footnotes/references should use <small> or a dedicated CSS class for fine-print styling."
+      },
+      {
+        "sourceComponents": ["aaaem-title", "cmp-title"],
+        "edsElement": "Headings (<h1>–<h6>)",
+        "archetypes": ["all"],
+        "notes": "Section headings. Source supports alignment variants (default, center). Center alignment can be handled via section metadata or inline style."
+      },
+      {
+        "sourceComponents": ["aaaem-image", "cmp-image"],
+        "edsElement": "Images (<picture>/<img>)",
+        "archetypes": ["all"],
+        "notes": "Standalone images. Source uses Adobe Dynamic Media URLs with lazy loading. EDS will use standard <picture> with srcset for responsive images. Some images have links (wrapped in <a>)."
+      },
+      {
+        "sourceComponents": ["aaaem-button", "cmp-button"],
+        "edsElement": "Links styled as buttons (<a class='button'>)",
+        "archetypes": ["all"],
+        "notes": "Three visual styles in source: primary-filled (coral/pink), primary-outline (outlined), secondary-filled (dark). In EDS, use standard button class with variants via .button.primary, .button.secondary, .button.outline defined in styles.css."
+      },
+      {
+        "sourceComponents": ["aaaem-container (structural)"],
+        "edsElement": "Sections (<div> with --- separator in document)",
+        "archetypes": ["all"],
+        "notes": "Layout containers become EDS sections. Style variants like 'scroll-reveal-before-sibling' map to section metadata classes. Not all container variants need migration — many are purely structural in AEM."
+      }
+    ]
+  },
+
+  "sharedComponents": {
+    "header": {
+      "sourceComponent": "AEM Experience Fragment (header)",
+      "edsImplementation": "nav.html auto-generated from /nav document in content source",
+      "notes": "EDS uses a /nav document to define header navigation. Mega-menu with two dropdown sections (Behandeling, Q&A) plus a 'Vind je kliniek' CTA. Mobile hamburger menu is handled by EDS header block JS. Logo links to /nl homepage."
+    },
+    "footer": {
+      "sourceComponent": "AEM Experience Fragment (footer)",
+      "edsImplementation": "footer.html auto-generated from /footer document in content source",
+      "notes": "EDS uses a /footer document. Contains: warning message with icon ('Kijk uit...'), legal text, nav links (treatments + Q&A topics), social media links (Instagram, Facebook), legal links (privacy, terms, disclaimer, cookies, clinic finder terms), Juvéderm + Allergan logos. Cookie settings link triggers OneTrust banner."
+    }
+  },
+
+  "sectionStyles": [
+    {
+      "name": "scroll-reveal",
+      "sourceClass": "scroll-reveal-before-sibling",
+      "description": "Scroll-triggered reveal animation for content sections",
+      "implementation": "CSS animation triggered via IntersectionObserver in scripts.js"
+    },
+    {
+      "name": "centered",
+      "sourceClass": "alignment-center",
+      "description": "Center-aligned text content (used on legal and contact pages)",
+      "implementation": "Section metadata style: centered"
+    },
+    {
+      "name": "footer-notes",
+      "sourceClass": "footer-notes / footer-info / footer-list-notes",
+      "description": "Small-print reference/footnote styling at bottom of pages",
+      "implementation": "Section metadata style: footnotes — applies smaller font size and muted color"
+    }
+  ],
+
+  "implementationPriority": [
+    {
+      "priority": 1,
+      "blockName": "hero",
+      "reason": "Used on every content page as the first element. Critical for visual fidelity."
+    },
+    {
+      "priority": 2,
+      "blockName": "cards",
+      "reason": "Core content component on homepage and treatment pages."
+    },
+    {
+      "priority": 3,
+      "blockName": "carousel",
+      "reason": "Used across 3 archetypes with 3 variants. High visual impact."
+    },
+    {
+      "priority": 4,
+      "blockName": "accordion",
+      "reason": "Essential for treatment page FAQ sections."
+    },
+    {
+      "priority": 5,
+      "blockName": "columns",
+      "reason": "Standard EDS boilerplate block, minimal custom work needed."
+    },
+    {
+      "priority": 6,
+      "blockName": "treatment-zones",
+      "reason": "Complex interactive block but shared across homepage and treatment pages."
+    },
+    {
+      "priority": 7,
+      "blockName": "topic-menu",
+      "reason": "Used only on FAQ page. Enhances navigation but not critical for content."
+    },
+    {
+      "priority": 8,
+      "blockName": "clinic-finder",
+      "reason": "Most complex block (Google Places API). Used only on locator pages. May require phased implementation."
+    },
+    {
+      "priority": 9,
+      "blockName": "embed",
+      "reason": "Low priority — tracking embeds may be replaced; video embeds need evaluation."
+    }
+  ],
+
+  "designTokens": {
+    "fonts": {
+      "primary": "Typekit sic6ayn (loaded via https://use.typekit.net/sic6ayn.css)",
+      "secondary": "Google Fonts Assistant (loaded via https://fonts.googleapis.com/css?family=Assistant)"
+    },
+    "buttonStyles": {
+      "primary-filled": "Coral/pink background, white text",
+      "primary-outline": "Transparent background, coral/pink border and text",
+      "secondary-filled": "Dark background, white text"
+    },
+    "imageDelivery": "Adobe Dynamic Media — URLs follow pattern: /adobe/dynamicmedia/deliver/dm-aid--{uuid}/{filename}. Query params: ?preferwebp=true&quality=85&width={w}. Images need to be migrated to DA.live or kept as external references.",
+    "breakpoints": {
+      "desktop": "1440px",
+      "tablet": "768px (implied)",
+      "mobile": "390px"
+    }
+  }
+}
