@@ -1,0 +1,11 @@
+{
+  "url": "https://www.juvederm.nl/nl/disclaimer",
+  "status": "migrated",
+  "archetype": "legal",
+  "previewUrl": "https://main--jv-test-7--jmffraiz.aem.page/nl/disclaimer",
+  "publishUrl": "https://main--jv-test-7--jmffraiz.aem.live/nl/disclaimer",
+  "textLenRatio": 0.85,
+  "imageRatio": 0.9,
+  "published": true,
+  "failureReason": null
+}

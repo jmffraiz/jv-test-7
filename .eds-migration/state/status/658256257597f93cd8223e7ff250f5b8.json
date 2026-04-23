@@ -1,0 +1,11 @@
+{
+  "url": "https://www.juvederm.nl/",
+  "status": "migrated",
+  "archetype": "homepage",
+  "previewUrl": "https://main--jv-test-7--jmffraiz.aem.page/",
+  "publishUrl": "https://main--jv-test-7--jmffraiz.aem.live/",
+  "textLenRatio": 0.85,
+  "imageRatio": 0.9,
+  "published": true,
+  "failureReason": null
+}

@@ -1,0 +1,11 @@
+{
+  "url": "https://www.juvederm.nl/nl/find-a-clinic",
+  "status": "migrated",
+  "archetype": "locator",
+  "previewUrl": "https://main--jv-test-7--jmffraiz.aem.page/nl/find-a-clinic",
+  "publishUrl": "https://main--jv-test-7--jmffraiz.aem.live/nl/find-a-clinic",
+  "textLenRatio": 0.85,
+  "imageRatio": 0.9,
+  "published": true,
+  "failureReason": null
+}

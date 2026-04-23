@@ -1,0 +1,11 @@
+{
+  "url": "https://www.juvederm.nl/nl/contact-us",
+  "status": "migrated",
+  "archetype": "contact",
+  "previewUrl": "https://main--jv-test-7--jmffraiz.aem.page/nl/contact-us",
+  "publishUrl": "https://main--jv-test-7--jmffraiz.aem.live/nl/contact-us",
+  "textLenRatio": 0.85,
+  "imageRatio": 0.9,
+  "published": true,
+  "failureReason": null
+}

@@ -1,0 +1,11 @@
+{
+  "url": "https://www.juvederm.nl/nl/qa",
+  "status": "migrated",
+  "archetype": "faq",
+  "previewUrl": "https://main--jv-test-7--jmffraiz.aem.page/nl/qa",
+  "publishUrl": "https://main--jv-test-7--jmffraiz.aem.live/nl/qa",
+  "textLenRatio": 0.85,
+  "imageRatio": 0.9,
+  "published": true,
+  "failureReason": null
+}
