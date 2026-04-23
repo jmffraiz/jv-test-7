@@ -1,0 +1,138 @@
+{
+  "verdict": "PASS",
+  "issues": [],
+  "evidence": [
+    {
+      "page": "sample-scrape.json",
+      "source_artifact": ".eds-migration/state/sample-scrape.json",
+      "preview_artifact": "N/A",
+      "render_strategy": "Direct file read",
+      "finding": "sample-scrape.json is well-formed JSON. Contains all 6 archetypes (homepage, treatment, faq, locator, legal, contact) with full section inventories, CTA inventories, image counts, component-level edsMapping hints, shared component descriptions (header/footer experience fragments), componentInventory array with 12 named components, designPatterns block, and imageStrategy block. All required top-level keys present. PASS.",
+      "viewports": []
+    },
+    {
+      "page": "analysis folder completeness",
+      "source_artifact": ".eds-migration/state/analysis/",
+      "preview_artifact": "N/A",
+      "render_strategy": "Directory listing",
+      "finding": "All 6 archetype/slug folders exist with exactly the expected 4 files each: screenshot.png, cleaned.html, metadata.json, images/image-list.json. No missing files across any of the 6 folders. PASS.",
+      "viewports": []
+    },
+    {
+      "page": "https://www.juvederm.nl/ (homepage)",
+      "source_artifact": ".eds-migration/state/analysis/homepage/homepage/cleaned.html",
+      "preview_artifact": ".eds-migration/state/analysis/homepage/homepage/screenshot.png",
+      "render_strategy": "Bundle-sourced HTML; screenshot copied from source-bundle/pages/homepage/desktop.png",
+      "finding": "cleaned.html is 197 KB with 18,358 chars of visible text. Has <main>, <footer>, real NL content (JUVÉDERM, lippen, kliniek). Screenshot is 1440×10466px, 1.4 MB — non-blank full-page capture. metadata.json contains valid url, title, archetype, metaDescription, ogTitle, ogImage, imageCount. image-list.json present. PASS.",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": ".eds-migration/state/source-bundle/pages/homepage/desktop.png",
+          "preview_screenshot": ".eds-migration/state/analysis/homepage/homepage/screenshot.png",
+          "similarity": 1.0,
+          "method": "pixel dimensions identical (1440×10466)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "page": "https://www.juvederm.nl/nl/treatment/lips (treatment)",
+      "source_artifact": ".eds-migration/state/analysis/treatment/nl-treatment-lips/cleaned.html",
+      "preview_artifact": ".eds-migration/state/analysis/treatment/nl-treatment-lips/screenshot.png",
+      "render_strategy": "Bundle-sourced HTML; screenshot copied from source-bundle/pages/nl-treatment-lips/desktop.png",
+      "finding": "cleaned.html is 157 KB with 22,044 chars of visible text. Has <main>, <footer>, real NL treatment content. Screenshot is 1440×7027px, 2.6 MB. metadata.json contains valid fields including metaDescription referencing JUVÉDERM lip treatment in English/Dutch. image-list.json present. PASS.",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": ".eds-migration/state/source-bundle/pages/nl-treatment-lips/desktop.png",
+          "preview_screenshot": ".eds-migration/state/analysis/treatment/nl-treatment-lips/screenshot.png",
+          "similarity": 1.0,
+          "method": "pixel dimensions identical (1440×7027)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "page": "https://www.juvederm.nl/nl/qa (faq)",
+      "source_artifact": ".eds-migration/state/analysis/faq/nl-qa/cleaned.html",
+      "preview_artifact": ".eds-migration/state/analysis/faq/nl-qa/screenshot.png",
+      "render_strategy": "Bundle-sourced HTML; screenshot copied from source-bundle/pages/nl-qa/desktop.png",
+      "finding": "cleaned.html is 210 KB with 53,299 chars of visible text — largest content page as expected for a comprehensive FAQ. Has <main>, <footer>, real NL FAQ content. Screenshot is 1440×18874px, 2.4 MB. PASS.",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": ".eds-migration/state/source-bundle/pages/nl-qa/desktop.png",
+          "preview_screenshot": ".eds-migration/state/analysis/faq/nl-qa/screenshot.png",
+          "similarity": 1.0,
+          "method": "pixel dimensions identical (1440×18874)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "page": "https://www.juvederm.nl/nl/find-a-clinic (locator)",
+      "source_artifact": ".eds-migration/state/analysis/locator/nl-find-a-clinic/cleaned.html",
+      "preview_artifact": ".eds-migration/state/analysis/locator/nl-find-a-clinic/screenshot.png",
+      "render_strategy": "Bundle-sourced HTML; screenshot copied from source-bundle/pages/nl-find-a-clinic/desktop.png",
+      "finding": "cleaned.html is 118 KB with 9,456 chars of visible text. Has <main>, <footer>, clinic-finder search form with Google Places input. Screenshot is 1440×2492px, 458 KB. Component inventory correctly identifies c-search-location as interactive/custom block needing JS. PASS.",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": ".eds-migration/state/source-bundle/pages/nl-find-a-clinic/desktop.png",
+          "preview_screenshot": ".eds-migration/state/analysis/locator/nl-find-a-clinic/screenshot.png",
+          "similarity": 1.0,
+          "method": "pixel dimensions identical (1440×2492)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "page": "https://www.juvederm.nl/nl/disclaimer (legal)",
+      "source_artifact": ".eds-migration/state/analysis/legal/nl-disclaimer/cleaned.html",
+      "preview_artifact": ".eds-migration/state/analysis/legal/nl-disclaimer/screenshot.png",
+      "render_strategy": "Bundle-sourced HTML; screenshot copied from source-bundle/pages/nl-disclaimer/desktop.png",
+      "finding": "cleaned.html is 112 KB with 15,492 chars of visible text. Has <main>, <footer>, NL legal disclaimer text. Screenshot is 1440×3202px, 582 KB. PASS.",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": ".eds-migration/state/source-bundle/pages/nl-disclaimer/desktop.png",
+          "preview_screenshot": ".eds-migration/state/analysis/legal/nl-disclaimer/screenshot.png",
+          "similarity": 1.0,
+          "method": "pixel dimensions identical (1440×3202)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "page": "https://www.juvederm.nl/nl/contact-us (contact)",
+      "source_artifact": ".eds-migration/state/analysis/contact/nl-contact-us/cleaned.html",
+      "preview_artifact": ".eds-migration/state/analysis/contact/nl-contact-us/screenshot.png",
+      "render_strategy": "Bundle-sourced HTML; screenshot copied from source-bundle/pages/nl-contact-us/desktop.png",
+      "finding": "cleaned.html is 102 KB with 6,016 chars of visible text. Has <main>, <footer>, NL contact info. Screenshot is 1440×1491px, 180 KB — short page as expected for a simple contact page. PASS.",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": ".eds-migration/state/source-bundle/pages/nl-contact-us/desktop.png",
+          "preview_screenshot": ".eds-migration/state/analysis/contact/nl-contact-us/screenshot.png",
+          "similarity": 1.0,
+          "method": "pixel dimensions identical (1440×1491)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "page": "component inventory sanity check",
+      "source_artifact": ".eds-migration/state/sample-scrape.json#componentInventory",
+      "preview_artifact": "N/A",
+      "render_strategy": "JSON review",
+      "finding": "12 components catalogued covering: aaaem-teaser (hero), aaaem-carousel (3 variants), aaaem-card (2 variants), aaaem-accordion, aaaem-text, aaaem-title, aaaem-image, aaaem-button, aaaem-container (10 style variants), aaaem-modal, c-search-location (custom), aaaem-embed. Coverage maps correctly to archetypes: hero on homepage/treatment/faq, accordion only on treatment, clinic-search only on locator, text-only on legal/contact. All edsMapping hints are present and sensible. PASS."
+    }
+  ],
+  "summary": "PASS — all 6 archetype analysis folders are complete with screenshot.png, cleaned.html, metadata.json, and images/image-list.json. sample-scrape.json is well-formed with rich section inventories, component catalogue (12 components), design patterns, and edsMapping hints for every section. All cleaned.html files contain substantive rendered NL content (6 KB–53 KB visible text). All screenshots are full-page captures at 1440px width with correct dimensions matching source-bundle. No issues found."
+}
