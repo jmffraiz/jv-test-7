@@ -1,0 +1,63 @@
+.clinic-finder {
+  padding: 40px 0;
+}
+
+.clinic-finder .clinic-finder-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.clinic-finder .clinic-finder-container h2 {
+  margin-bottom: 24px;
+}
+
+.clinic-finder .clinic-finder-form {
+  width: 100%;
+}
+
+.clinic-finder .clinic-finder-input-wrapper {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.clinic-finder .clinic-finder-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 16px;
+  font-size: var(--body-font-size-m, 18px);
+  border: 2px solid var(--border-light, #e0e0e0);
+  border-radius: 30px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.clinic-finder .clinic-finder-input:focus {
+  border-color: var(--brand-primary, #e4717a);
+}
+
+.clinic-finder .clinic-finder-submit {
+  border-radius: 30px;
+  padding: 12px 32px;
+}
+
+/* Google Places autocomplete dropdown overrides */
+.pac-container {
+  border-radius: 8px;
+  border: 1px solid var(--border-light, #e0e0e0);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+  font-family: var(--body-font-family);
+  margin-top: 4px;
+}
+
+@media (width >= 900px) {
+  .clinic-finder {
+    padding: 60px 0;
+  }
+
+  .clinic-finder .clinic-finder-input-wrapper {
+    flex-wrap: nowrap;
+  }
+}

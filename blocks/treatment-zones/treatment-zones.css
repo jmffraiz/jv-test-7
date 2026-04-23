@@ -1,0 +1,96 @@
+.treatment-zones .treatment-zones-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.treatment-zones .treatment-zones-image {
+  position: relative;
+  text-align: center;
+}
+
+.treatment-zones .treatment-zones-image picture {
+  display: block;
+}
+
+.treatment-zones .treatment-zones-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.treatment-zones .treatment-zones-zone-img {
+  position: absolute;
+  inset: 0;
+}
+
+.treatment-zones .treatment-zones-zone-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+}
+
+.treatment-zones .treatment-zones-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.treatment-zones .treatment-zones-tab {
+  padding: 10px 20px;
+  border: 2px solid var(--border-light, #e0e0e0);
+  border-radius: 30px;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  color: var(--text-color, #333);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.treatment-zones .treatment-zones-tab:hover {
+  border-color: var(--brand-primary, #e4717a);
+  color: var(--brand-primary, #e4717a);
+}
+
+.treatment-zones .treatment-zones-tab.active {
+  border-color: var(--brand-primary, #e4717a);
+  background-color: var(--brand-primary, #e4717a);
+  color: #fff;
+}
+
+.treatment-zones .treatment-zones-panel {
+  line-height: 1.6;
+}
+
+.treatment-zones .treatment-zones-panel p:first-child {
+  margin-top: 0;
+}
+
+@media (width >= 900px) {
+  .treatment-zones .treatment-zones-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  .treatment-zones .treatment-zones-image {
+    flex: 0 0 45%;
+  }
+
+  .treatment-zones .treatment-zones-content {
+    flex: 1;
+  }
+
+  .treatment-zones .treatment-zones-tabs {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .treatment-zones .treatment-zones-tab {
+    text-align: left;
+  }
+}

@@ -1,0 +1,14 @@
+version: 1
+
+sitemaps:
+  default:
+    origin: https://www.juvederm.nl
+    include:
+      - /nl/**
+      - /
+    exclude:
+      - /nl/clinic
+      - /nl/clinics
+    hreflang:
+      - lang: nl
+        origin: https://www.juvederm.nl

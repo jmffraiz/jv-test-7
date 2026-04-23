@@ -1,0 +1,38 @@
+version: 1
+
+indices:
+  query-index:
+    include:
+      - /nl/**
+      - /
+    exclude:
+      - /nl/clinic
+      - /nl/clinics
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, 'content')
+      keywords:
+        select: head > meta[name="keywords"]
+        value: attribute(el, 'content')
+      author:
+        select: head > meta[name="author"]
+        value: attribute(el, 'content')
+      date:
+        select: head > meta[name="publishdate"], head > meta[name="date"]
+        value: attribute(el, 'content')
+      lastModified:
+        select: head > meta[name="lastmodified"]
+        value: attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, 'content')
+      archetype:
+        select: head > meta[name="archetype"]
+        value: attribute(el, 'content')

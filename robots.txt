@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow duplicate/internal clinic detail pages
+Disallow: /nl/clinic
+Disallow: /nl/clinics
+
+# Sitemap
+Sitemap: https://www.juvederm.nl/sitemap.xml
