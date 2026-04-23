@@ -1,0 +1,13 @@
+{
+  "url": "https://www.juvederm.nl/nl/treatment/eye-area",
+  "title": " Juvederm en ogen | Juvéderm® Netherlands",
+  "archetype": "treatment",
+  "slug": "nl-treatment-eye-area",
+  "viewport_sizes": {
+    "desktop": "1440x900",
+    "mobile": "390x844"
+  },
+  "settle_strategy": "networkidle + body.textLength stable 500ms x2, textLength=7319, stable=true, dismissed overlays",
+  "captured_at": "2026-04-23T17:21:29.971Z",
+  "error": null
+}

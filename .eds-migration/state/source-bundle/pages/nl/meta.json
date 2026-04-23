@@ -1,0 +1,13 @@
+{
+  "url": "https://www.juvederm.nl/nl",
+  "title": "JUVÉDERM Nederlands",
+  "archetype": "content-page",
+  "slug": "nl",
+  "viewport_sizes": {
+    "desktop": "1440x900",
+    "mobile": "390x844"
+  },
+  "settle_strategy": "networkidle + body.textLength stable 500ms x2, textLength=6682, stable=true, dismissed overlays",
+  "captured_at": "2026-04-23T17:19:40.647Z",
+  "error": null
+}

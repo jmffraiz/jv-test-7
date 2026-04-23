@@ -1,0 +1,13 @@
+{
+  "url": "https://www.juvederm.nl/nl/find-a-clinic",
+  "title": " Vind een kliniek | Juvéderm® Netherlands",
+  "archetype": "content-page",
+  "slug": "nl-find-a-clinic",
+  "viewport_sizes": {
+    "desktop": "1440x900",
+    "mobile": "390x844"
+  },
+  "settle_strategy": "networkidle + body.textLength stable 500ms x2, textLength=4103, stable=true, dismissed overlays",
+  "captured_at": "2026-04-23T17:20:38.751Z",
+  "error": null
+}

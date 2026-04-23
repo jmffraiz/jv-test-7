@@ -1,0 +1,301 @@
+{
+  "site": "https://www.juvederm.nl",
+  "crawledAt": "2026-04-23T17:24:20.585Z",
+  "pages": [
+    {
+      "url": "https://www.juvederm.nl/",
+      "title": "JUVÉDERM Nederlands",
+      "archetype": "homepage",
+      "depth": 0,
+      "priority": "high",
+      "slug": "homepage"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl",
+      "title": "JUVÉDERM Nederlands",
+      "archetype": "homepage",
+      "depth": 1,
+      "priority": "high",
+      "slug": "nl"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/treatment/lips",
+      "title": " Juvederm en lippen | Juvéderm® Netherlands",
+      "archetype": "treatment",
+      "depth": 3,
+      "priority": "low",
+      "slug": "nl-treatment-lips"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/treatment/eye-area",
+      "title": " Juvederm en ogen | Juvéderm® Netherlands",
+      "archetype": "treatment",
+      "depth": 3,
+      "priority": "low",
+      "slug": "nl-treatment-eye-area"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/treatment/enhance",
+      "title": " Accentueren met Juvederm | Juvéderm® Netherlands",
+      "archetype": "treatment",
+      "depth": 3,
+      "priority": "low",
+      "slug": "nl-treatment-enhance"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/treatment/restore",
+      "title": " Herstel met Juvederm | Juvéderm® Netherlands",
+      "archetype": "treatment",
+      "depth": 3,
+      "priority": "low",
+      "slug": "nl-treatment-restore"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/treatment/male",
+      "title": " Juvederm en mannen | Juvéderm® Netherlands",
+      "archetype": "treatment",
+      "depth": 3,
+      "priority": "low",
+      "slug": "nl-treatment-male"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/qa",
+      "title": "Veelgestelde vragen Juvederm | Juvéderm® Netherlands",
+      "archetype": "faq",
+      "depth": 2,
+      "priority": "medium",
+      "slug": "nl-qa"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/find-a-clinic",
+      "title": " Vind een kliniek | Juvéderm® Netherlands",
+      "archetype": "locator",
+      "depth": 2,
+      "priority": "medium",
+      "slug": "nl-find-a-clinic"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/disclaimer",
+      "title": "Social media disclaimer | Juvéderm® Netherlands",
+      "archetype": "legal",
+      "depth": 2,
+      "priority": "medium",
+      "slug": "nl-disclaimer"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/contact-us",
+      "title": "Neem contact op",
+      "archetype": "contact",
+      "depth": 2,
+      "priority": "medium",
+      "slug": "nl-contact-us"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/clinics",
+      "title": " Vind een kliniek | Juvéderm® Netherlands",
+      "archetype": "locator",
+      "depth": 2,
+      "priority": "medium",
+      "slug": "nl-clinics"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/clinic",
+      "title": " Vind een kliniek | Juvéderm® Netherlands",
+      "archetype": "locator",
+      "depth": 2,
+      "priority": "medium",
+      "slug": "nl-clinic"
+    },
+    {
+      "url": "https://www.juvederm.nl/nl/algemene-voorwaarden-kliniekzoeker",
+      "title": "General Terms and Conditions Clinic Finder | Juvéderm® Netherlands",
+      "archetype": "legal",
+      "depth": 2,
+      "priority": "medium",
+      "slug": "nl-algemene-voorwaarden-kliniekzoeker"
+    }
+  ],
+  "archetypes": [
+    {
+      "name": "homepage",
+      "count": 2,
+      "sampleUrls": [
+        "https://www.juvederm.nl/",
+        "https://www.juvederm.nl/nl"
+      ]
+    },
+    {
+      "name": "treatment",
+      "count": 5,
+      "sampleUrls": [
+        "https://www.juvederm.nl/nl/treatment/lips",
+        "https://www.juvederm.nl/nl/treatment/eye-area",
+        "https://www.juvederm.nl/nl/treatment/enhance"
+      ]
+    },
+    {
+      "name": "faq",
+      "count": 1,
+      "sampleUrls": [
+        "https://www.juvederm.nl/nl/qa"
+      ]
+    },
+    {
+      "name": "locator",
+      "count": 3,
+      "sampleUrls": [
+        "https://www.juvederm.nl/nl/find-a-clinic",
+        "https://www.juvederm.nl/nl/clinics",
+        "https://www.juvederm.nl/nl/clinic"
+      ]
+    },
+    {
+      "name": "legal",
+      "count": 2,
+      "sampleUrls": [
+        "https://www.juvederm.nl/nl/disclaimer",
+        "https://www.juvederm.nl/nl/algemene-voorwaarden-kliniekzoeker"
+      ]
+    },
+    {
+      "name": "contact",
+      "count": 1,
+      "sampleUrls": [
+        "https://www.juvederm.nl/nl/contact-us"
+      ]
+    }
+  ],
+  "navigation": {
+    "header": [
+      {
+        "text": "https://privacy.abbvie/.",
+        "href": "https://privacy.abbvie/"
+      },
+      {
+        "text": "Skip to Main Content",
+        "href": "https://www.juvederm.nl/#maincontent"
+      },
+      {
+        "text": "",
+        "href": "https://www.juvederm.nl/nl"
+      },
+      {
+        "text": "",
+        "href": "https://www.juvederm.nl/nl"
+      },
+      {
+        "text": "Lippen",
+        "href": "https://www.juvederm.nl/nl/treatment/lips"
+      },
+      {
+        "text": "Ogen",
+        "href": "https://www.juvederm.nl/nl/treatment/eye-area"
+      },
+      {
+        "text": "Accentueren",
+        "href": "https://www.juvederm.nl/nl/treatment/enhance"
+      },
+      {
+        "text": "Herstel",
+        "href": "https://www.juvederm.nl/nl/treatment/restore"
+      },
+      {
+        "text": "Man",
+        "href": "https://www.juvederm.nl/nl/treatment/male"
+      },
+      {
+        "text": "Over Juvéderm®",
+        "href": "https://www.juvederm.nl/nl/qa#about-juvederm"
+      },
+      {
+        "text": "Kosten",
+        "href": "https://www.juvederm.nl/nl/qa#duration"
+      },
+      {
+        "text": "Langdurige resultaten",
+        "href": "https://www.juvederm.nl/nl/qa#results"
+      },
+      {
+        "text": "Veiligheid",
+        "href": "https://www.juvederm.nl/nl/qa#side-effects"
+      },
+      {
+        "text": "Zones van het gezicht",
+        "href": "https://www.juvederm.nl/nl/qa#facial-areas"
+      },
+      {
+        "text": "Vind je kliniek",
+        "href": "https://www.juvederm.nl/nl/find-a-clinic"
+      },
+      {
+        "text": "",
+        "href": "https://www.juvederm.nl/nl"
+      },
+      {
+        "text": "Lippen",
+        "href": "https://www.juvederm.nl/nl/treatment/lips"
+      },
+      {
+        "text": "Ogen",
+        "href": "https://www.juvederm.nl/nl/treatment/eye-area"
+      },
+      {
+        "text": "Accentueren",
+        "href": "https://www.juvederm.nl/nl/treatment/enhance"
+      },
+      {
+        "text": "Herstel",
+        "href": "https://www.juvederm.nl/nl/treatment/restore"
+      },
+      {
+        "text": "Man",
+        "href": "https://www.juvederm.nl/nl/treatment/male"
+      },
+      {
+        "text": "Over Juvéderm®",
+        "href": "https://www.juvederm.nl/nl/qa#about-juvederm"
+      },
+      {
+        "text": "Kosten",
+        "href": "https://www.juvederm.nl/nl/qa#duration"
+      },
+      {
+        "text": "Langdurige resultaten",
+        "href": "https://www.juvederm.nl/nl/qa#results"
+      },
+      {
+        "text": "Veiligheid",
+        "href": "https://www.juvederm.nl/nl/qa#side-effects"
+      },
+      {
+        "text": "Zones van het gezicht",
+        "href": "https://www.juvederm.nl/nl/qa#facial-areas"
+      },
+      {
+        "text": "Vind je kliniek",
+        "href": "https://www.juvederm.nl/nl/find-a-clinic"
+      }
+    ],
+    "footer": [
+      {
+        "text": "Vind je kliniek",
+        "href": "https://www.juvederm.nl/nl/find-a-clinic"
+      }
+    ]
+  },
+  "assets": {
+    "favicon": "https://www.juvederm.nl/content/dam/juvederm-ous/favicon.ico",
+    "fonts": [
+      "https://use.typekit.net/sic6ayn.css",
+      "https://fonts.googleapis.com/css?family=Assistant"
+    ],
+    "globalImages": []
+  },
+  "crawlStats": {
+    "totalFound": 15,
+    "totalCaptured": 9,
+    "sitemapUrlsFound": 13,
+    "errors": 0,
+    "crawlErrors": []
+  }
+}
