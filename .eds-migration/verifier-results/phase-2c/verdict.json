@@ -1,0 +1,168 @@
+{
+  "verdict": "PASS",
+  "issues": [
+    {
+      "severity": "low",
+      "criterion": "block-source-components",
+      "details": "Hero block sourceComponents lists ['aaaem-teaser', 'cmp-teaser'] but the locator archetype hero actually uses aaaem-container with 'juvederm-findaclinic-hero' class, not aaaem-teaser. The extraction instructions correctly note this difference, but the block definition's sourceComponents array is incomplete.",
+      "remediation": "Add 'aaaem-container' to hero block sourceComponents or add a note that the locator variant derives from a different source component."
+    },
+    {
+      "severity": "low",
+      "criterion": "content-model-consistency",
+      "details": "Cards block content model uses 3 cells per row (image | title+body | CTA) in blueprint, but block-inventory.json specifies 4 cells (image | title | body | CTA). The blueprint's consolidation of title+body into one cell is arguably more author-friendly (David's Model), but diverges from the inventory.",
+      "remediation": "Reconcile cards content model between blueprint (3 cells) and inventory (4 cells). The blueprint's 3-cell model is better for authors — update inventory to match."
+    },
+    {
+      "severity": "low",
+      "criterion": "chrome-header-screenshot",
+      "details": "The source-bundle header screenshot (chrome/header-desktop.png) is only 1090 bytes, suggesting a near-empty or very small capture. This doesn't affect the blueprint quality but limits visual verification of the nav structure.",
+      "remediation": "Re-capture header screenshot if future visual verification of nav is needed."
+    }
+  ],
+  "evidence": [
+    {
+      "page": "homepage",
+      "source_artifact": "source-bundle/pages/homepage/index.html",
+      "preview_artifact": "N/A (blueprint verification, no migrated preview yet)",
+      "render_strategy": "Source HTML DOM analysis + source-bundle screenshots from Playwright (networkidle + body.innerText stability 500ms x2, OneTrust dismissed)",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": "source-bundle/pages/homepage/desktop.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/homepage-source-desktop.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        },
+        {
+          "name": "mobile",
+          "source_screenshot": "source-bundle/pages/homepage/mobile.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/homepage-source-mobile.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ],
+      "finding": "Homepage archetype template (8 sections) aligns with source HTML components: hero-teaser with video ✓, aaaem-carousel ✓, aaaem-card (x4 value-proposition cards) ✓, c-find-the-clinic-video ✓, aaaem-text footnotes ✓. Blueprint correctly models hero-video variant, columns intro, cards, carousel (before-after), treatment-zones, embed, and footer-notes default content."
+    },
+    {
+      "page": "nl-treatment-lips",
+      "source_artifact": "source-bundle/pages/nl-treatment-lips/index.html",
+      "preview_artifact": "N/A (blueprint verification, no migrated preview yet)",
+      "render_strategy": "Source HTML DOM analysis + source-bundle screenshots",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": "source-bundle/pages/nl-treatment-lips/desktop.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/treatment-source-desktop.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        },
+        {
+          "name": "mobile",
+          "source_screenshot": "source-bundle/pages/nl-treatment-lips/mobile.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/treatment-source-mobile.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ],
+      "finding": "Treatment archetype template (9 sections) aligns with source HTML: hero-teaser (no video) ✓, carousel (benefit text) ✓, Voor/Na before-after pattern ✓, accordion with 4 FAQ Q&A pairs (Wat kan ik verwachten, Bijwerkingen, Hoe werken fillers, Hoe snel resultaat) ✓, treatment zones labels (Versterk contouren, Stralende oogopslag, Herstel volume, Vollere lippen) ✓, c-find-the-clinic embed ✓."
+    },
+    {
+      "page": "nl-qa",
+      "source_artifact": "source-bundle/pages/nl-qa/index.html",
+      "preview_artifact": "N/A (blueprint verification, no migrated preview yet)",
+      "render_strategy": "Source HTML DOM analysis + source-bundle screenshots",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": "source-bundle/pages/nl-qa/desktop.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/faq-source-desktop.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        },
+        {
+          "name": "mobile",
+          "source_screenshot": "source-bundle/pages/nl-qa/mobile.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/faq-source-mobile.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ],
+      "finding": "FAQ archetype template (6 sections) aligns with source: hero-teaser ✓, juvederm-topicmenu ✓, about-juvederm anchor ✓, carousel ✓, extensive default content sections with text/titles/images ✓. Blueprint correctly uses mostly default content for the ~30+ text blocks with only hero, topic-menu, and carousel as blocks."
+    },
+    {
+      "page": "nl-find-a-clinic",
+      "source_artifact": "source-bundle/pages/nl-find-a-clinic/index.html",
+      "preview_artifact": "N/A (blueprint verification, no migrated preview yet)",
+      "render_strategy": "Source HTML DOM analysis + source-bundle screenshots",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": "source-bundle/pages/nl-find-a-clinic/desktop.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/locator-source-desktop.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        },
+        {
+          "name": "mobile",
+          "source_screenshot": "source-bundle/pages/nl-find-a-clinic/mobile.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/locator-source-mobile.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ],
+      "finding": "Locator archetype template (3 sections) aligns with source: juvederm-findaclinic-hero container with H1 'Vind een kliniek bij jou in de buurt' ✓, c-search-location component ✓. Note: hero uses aaaem-container not aaaem-teaser — extraction instructions correctly reference 'juvederm-findaclinic-hero' class."
+    },
+    {
+      "page": "chrome-verification",
+      "source_artifact": "source-bundle/chrome/header.html + source-bundle/chrome/footer.html",
+      "preview_artifact": "N/A (blueprint verification)",
+      "render_strategy": "DOM analysis of chrome HTML artifacts",
+      "viewports": [
+        {
+          "name": "desktop",
+          "source_screenshot": "source-bundle/chrome/footer-desktop.png",
+          "preview_screenshot": ".eds-migration/verifier-results/phase-2c/screenshots/chrome-footer-desktop.png",
+          "similarity": 1.0,
+          "method": "identity (source-only, blueprint-phase check)",
+          "threshold": 0.75,
+          "passed": true
+        }
+      ],
+      "finding": "Chrome modelling verified: Nav structure has logo (/nl), 2 menu sections (Behandeling with 5 treatment links, Q&A with 5 topic links), and CTA (Vind je kliniek). All 11 nav links match header.links.json exactly. Footer structure includes: warning banner (Kijk uit...) ✓, CTA ✓, 10 nav links ✓, Instagram + Facebook social links ✓, 6 legal links (contact, privacy, terms, disclaimer, cookies, kliniekzoeker) ✓, Juvéderm + Allergan logos ✓. All elements verified present in source footer.html."
+    },
+    {
+      "page": "cross-reference-manifest",
+      "source_artifact": ".eds-migration/state/manifest.json",
+      "preview_artifact": ".eds-migration/state/blueprint.json",
+      "render_strategy": "JSON structural comparison",
+      "viewports": [],
+      "finding": "All 14 manifest pages accounted for across 6 archetypes: homepage(2), treatment(5), faq(1), locator(3), legal(2), contact(1). Page counts match exactly. All archetype names match. All page URLs match."
+    },
+    {
+      "page": "cross-reference-blocks",
+      "source_artifact": ".eds-migration/state/block-inventory.json",
+      "preview_artifact": ".eds-migration/state/blueprint.json",
+      "render_strategy": "JSON structural comparison",
+      "viewports": [],
+      "finding": "All 9 blocks from inventory defined in blueprint: hero, carousel, cards, accordion, columns, treatment-zones, topic-menu, clinic-finder, embed. All 5 default content mappings present (text, title, image, button, container). Block content models follow David's Model: all ≤4 cells per row. 3 section styles (scroll-reveal, centered, footer-notes) consistently used across archetypes and match inventory."
+    }
+  ],
+  "summary": "Blueprint is comprehensive, well-formed, and consistent with manifest (14 pages, 6 archetypes) and block inventory (9 blocks, 5 default content mappings). Chrome (nav + footer) is fully modelled with all links verified against source HTML. Content models follow David's Model (≤4 cells). Only low-severity issues: hero sourceComponents incomplete for locator variant, cards cell count differs from inventory (3 vs 4 — blueprint's 3-cell model is arguably better). PASS."
+}
